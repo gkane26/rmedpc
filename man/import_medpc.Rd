@@ -2,9 +2,9 @@
 % Please edit documentation in R/import_medpc.R
 \name{import_medpc}
 \alias{import_medpc}
-\title{import data from MedPC file to an R list}
+\title{Import data from MedPC file to an R list}
 \usage{
-import_medpc(filename)
+import_medpc(filename = "")
 }
 \arguments{
 \item{filename}{full path to MedPC data file}
@@ -13,7 +13,8 @@ import_medpc(filename)
 list containing each variable in MedPC data file, referenced by variable name
 }
 \description{
-import data from MedPC file to an R list
+Parses MedPC data file and returns variables in a named list.
+Uses 'filename' if filename is a path to a file, otherwise, opens a GUI to select a file.
 }
 \examples{
 example_file = system.file("extdata", "example_data", package = "rmedpc")

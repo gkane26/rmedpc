@@ -1,4 +1,7 @@
-#' import data from MedPC file to an R list
+#' Import data from MedPC file to an R list
+#'
+#' Parses MedPC data file and returns variables in a named list.
+#' Uses 'filename' if filename is a path to a file, otherwise, opens a GUI to select a file.
 #'
 #' @param filename full path to MedPC data file
 #' @return list containing each variable in MedPC data file, referenced by variable name
@@ -6,11 +9,10 @@
 #' @examples
 #' example_file = system.file("extdata", "example_data", package = "rmedpc")
 #' import_medpc(example_file)
-import_medpc <- function(filename){
+import_medpc <- function(filename=""){
 
-  if(missing(filename)){
-    library(svDialogs)
-    filename = dlgOpen()$res
+  if(!file.exists(filename)){
+    filename = svDialogs::dlgOpen()$res
   }
 
   #initialize list of variables
