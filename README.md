@@ -6,4 +6,4 @@ To install, first make sure devtools package in installed. In an R session:
   
 Next, install this package directly from github:
 
-  ``install_github("gkane26/rmedpc")``
+  ``devtools::install_github("gkane26/rmedpc")``
